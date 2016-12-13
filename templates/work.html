@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{% for work in the_page.data %}
+    <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="panel-title">
+            {{work.where}}
+        </h3></div>
+        <div class="panel-body"><dl class="dl-horizontal">
+            {% for inf in work.info %}
+                <dt>{{inf.0}}:</dt>
+                {% autoescape off %}
+                <dd>{{inf.1}}</dd>
+                {% endautoescape %}
+            {% endfor %}
+        </dl></div>
+    </div>
+{% endfor %}
+
+<!--
+<div class="panel panel-default">
+    <div class="panel-heading"><h3 class="panel-title">ВННИФТ г. Снежинск (бывший Челябинск-70)</h3></div>
+    <div class="panel-body"><dl class="dl-horizontal">
+        <dt>Период:</dt>    <dd>1987-2000</dd>
+        <dt>Должности:</dt> <dd>МНС, НС, СНС</dd>
+        <dt>Языки:</dt>     <dd>ФОРТРАН, C++</dd>
+        <dt>Награды:</dt>   <dd>Премия имени А.А.Бунатяна в области математики и вычислительной техники "Лучший молодой специалист 2000 года"</dd>
+    </dl></div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading"><h3 class="panel-title">НейрОК</h3></div>
+    <div class="panel-body"><dl class="dl-horizontal">
+        <dt>Период:</dt>    <dd>1998-2003</dd>
+        <dt>Должности:</dt> <dd>Главный технолог, Главный инженер в группе из 10 программистов</dd>
+        <dt>Языки:</dt>     <dd>Java, C++, Visual Basic, VBA, JavaScript, Python</dd>
+    </dl></div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading"><h3 class="panel-title">Смета-Багира</h3></div>
+    <div class="panel-body"><dl class="dl-horizontal">
+        <dt>Период:</dt>    <dd>2003-</dd>
+        <dt>Должности:</dt> <dd>СНС</dd>
+        <dt>Языки:</dt>     <dd>Visual FoxPro, VBA</dd>
+    </dl></div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading"><h3 class="panel-title">Open source</h3></div>
+    <div class="panel-body"><dl class="dl-horizontal">
+        <dt>Период:</dt>    <dd>2012-</dd>
+        <dt>Проекты:</dt>   <dd><a href="http://www.uvviewsoft.com/synwrite/">SynWrite</a>, <a href="http://www.uvviewsoft.com/cudatext/">CudaText</a></dd>
+        <dt>Вклад:</dt>     <dd>Тестирование, Новые идеи, Разработка плагинов
+            (5 плагинов для SynWrite,
+            12 <a href="https://sourceforge.net/projects/kvichans-plugins/files/cudatext-addons/">плагинов</a> для CudaText)</dd>
+        <dt>Языки:</dt>     <dd>Python</dd>
+    </dl></div>
+</div>
+-->
+{% endblock %}

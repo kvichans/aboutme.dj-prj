@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--{% load static from staticfiles %}-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}" />
+    <!--bootstrap-->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>AboutMe - {{ the_page.tag }}</title>
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+      <h3>WEB-визитка</h3>
+    </div>
+
+    <div class="row menu">
+        <ul class="nav nav-tabs ">
+        {% for page in pages.values %}
+            <li role="presentation"
+                {% if the_page.id == page.id %} class="active" {% endif %}>
+                <a href="{% url page.id %}">
+                <!--<a href="/{{ page.url }}">-->
+                    {{ page.cap }}
+                </a>
+            </li>
+        {% endfor %}
+        <!--
+          <li role="presentation" {% if active == 'main' %}class="active"{% endif %}>
+            <a href="/">Инфо</a></li>
+          <li role="presentation" {% if active == 'edu' %}class="active"{% endif %}>
+            <a href="/edu">Учеба</a></li>
+          <li role="presentation" {% if active == 'work' %}class="active"{% endif %}>
+            <a href="/work">Работа</a></li>
+          <li role="presentation" {% if active == 'joi' %}class="active"{% endif %}>
+            <a href="/joi">Увлечения</a></li>
+        -->
+        </ul>
+    </div>
+
+    <div class="row content">
+        {% block body %}
+        {% endblock %}
+    </div>
+
+    <div class="modal-footer">
+        &copy; 2016 Андрей Квичанский
+    </div>
+</div>
+
+    <!--bootstrap-->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+</body>
+</html>

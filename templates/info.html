@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+
+{% block body %}
+<dl class="dl-horizontal">
+    <dt>{{the_page.data.fio.tag}}:</dt>     <dd>{{the_page.data.fio.val}}</dd>
+    <!-- -->
+    <dt>{{the_page.data.foto.tag}}:</dt>    <dd><img         alt="{{the_page.data.fio.val}}" width="10%" height="10%"
+                                                     src="{% static the_page.data.foto.val %}"></dd>
+    <!-- -->
+    <!-- - ->
+    <dt>{{the_page.data.foto.tag}}:</dt>    <dd><img alt="{{the_page.data.fio.val}}" width="10%" height="10%"
+                                                     src="{{the_page.data.foto.val}}"></dd>
+    <!- - -->
+    <dt>{{the_page.data.b_date.tag}}:</dt>  <dd>{{the_page.data.b_date.val|date:'d b Y'}}</dd>
+    <dt>{{the_page.data.age.tag}}:</dt>     <dd>{{the_page.data.age.val}}</dd>
+    <dt>{{the_page.data.edu.tag}}:</dt>     <dd>{{the_page.data.edu.val}}</dd>
+    <dt>{{the_page.data.prof.tag}}:</dt>    <dd>{{the_page.data.prof.val}}</dd>
+    <dt>{{the_page.data.mail.tag}}:</dt>    <dd><a href="mailto:{{the_page.data.mail.val}}">{{the_page.data.mail.val}}</a> </dd>
+</dl>
+{% endblock %}

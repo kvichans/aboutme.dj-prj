@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{% for edu in the_page.data %}
+    <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="panel-title">
+            {{edu.what}}
+        </h3></div>
+        <div class="panel-body">
+            {% autoescape off %}
+                {{edu.html}}
+            {% endautoescape %}
+        </div>
+    </div>
+{% endfor %}
+
+<!--
+<div class="panel panel-default">
+    <div class="panel-heading"><h3 class="panel-title">Игра Го</h3></div>
+    <div class="panel-body">
+        История рейтинга на сервере <a href="http://www.dragongoserver.net/userinfo.php?uid=83477">DGS</a><br>
+        <img width="25%" height="25%" src="/static/img/dgs-graph.PNG" alt="График">
+    </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading"><h3 class="panel-title">Новая Хронология</h3></div>
+  <div class="panel-body">
+      <a href="http://chronologia.org/">Сайт</a> проекта Новая Хронология
+  </div>
+</div>
+-->
+{% endblock %}
